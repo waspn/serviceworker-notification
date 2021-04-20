@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "ES2015",
+        "outDir": "compiled",
+        "sourceMap": true
+    },
+    "include": [
+        "scripts"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules"
+    ]
+}

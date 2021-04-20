@@ -1,0 +1,39 @@
+{
+  "name": "electron-notification",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "tsc && npm run bundle-file && electron .",
+    "start-web": "tsc && npm run bundle-file && npm run open && node ./public/server.js",
+    "debug": "node --inspect=5678 --inspect-brk .",
+    "open": "start http://localhost:8765",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "bundle-file": "browserify .\\compiled\\scripts\\index.js -o .\\compiled\\scripts\\bundleIndex.js",
+    "demo-req": "node startup"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^16.5.1",
+    "electron": "^8.2.1",
+    "electron-builder": "^22.4.1",
+    "express": "^4.17.1"
+  },
+  "build": {
+    "appId": "notification.notify",
+    "mac": {
+      "category": "uncategorized"
+    }
+  },
+  "postinstall": "electron-builder install-app-deps",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "cors": "^2.8.5",
+    "node-notifier": "git+https://github.com/mikaelbr/node-notifier.git#master",
+    "push.js": "^1.0.12",
+    "shelljs": "^0.8.3",
+    "spdy": "^4.0.2"
+  }
+}
